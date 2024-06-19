@@ -1,0 +1,114 @@
+.header {
+    position: fixed;
+    z-index: 1;
+
+    background-color: var(--tertiary-color);
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 8rem;
+    padding-left: 4rem;
+
+    transition: .3s ease-in-out;
+}
+
+.header__menu-hamburger {
+    display: flex;
+    flex-direction: column;
+    width: 31px;
+    height: 22px;
+}
+
+.menu-hamburger__block {
+    display: block;
+    height: 8px;
+}
+
+.line-1, .line-2, .line-3 {
+    background-color: var(--primary-color);
+    height: 2px;
+    width: 31px;
+
+    transition: .5s;
+}
+
+.line-2 {
+    transition: .4s;
+}
+
+.menu-hamburger--active .line-1 {
+    transform: rotate(-45deg) translate(-6px, 8px);
+}
+
+.menu-hamburger--active .line-2 {
+    opacity: 0;
+}
+
+.menu-hamburger--active .line-3 {
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.header__navigation {
+    display: none;
+
+    background-color: var(--tertiary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+
+    text-align: center;
+}
+
+.header__navigation a {
+    display: block;
+    padding: 1.5rem 0;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.header__navigation a:hover {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+}
+
+.navigation--visible {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .header__menu-hamburger {
+        display: none;
+    }
+
+    .header__navigation {
+        display: block;
+
+        background-color: transparent;
+        position: static;
+        width: auto;
+
+        text-align: center;
+    }
+
+    .header__navigation ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .header__navigation a {
+        display: block;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: .3s;
+    }
+}
